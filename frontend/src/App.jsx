@@ -10,6 +10,7 @@ function App() {
     <>
       <h1>Pruebas de pagina</h1>
       <p>Prueba para repositorio</p>
+      <h2>hola</h2>
     </>
   )
 }
