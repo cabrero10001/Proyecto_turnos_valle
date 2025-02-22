@@ -1,12 +1,14 @@
 import mysql.connector
 
-mysql = None
-
 def Conexion():
     conexion = mysql.connector.connect(
         host="localhost",
         user="root",
         password="1234",
-        database="ip_prueba"
+        database="ips_prueba"
     )
+    if conexion.is_connected():
+        print("Conexión exitosa")
+    else:
+        print("Error en la conexión")
     return conexion
