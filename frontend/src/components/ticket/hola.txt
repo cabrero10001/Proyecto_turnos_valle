@@ -8,33 +8,32 @@ import { useState } from "react";
  * - Condición
  */
 const Form = () => {
+    // Estado para almacenar los valores del formulario
     const [values, setValues] = useState({
-        name: "",
-        document: "",
-        condition: ""
-    })
-    const handleInputChange = (event) =>{
-        const {name,value} =event.target;//se desestructura el event.target el cual acumula el name,value y type de los input
-        setValues({//se modifica el estado de 'values'
-            ...values,// guarda las claves y valores anteriores
-            [name]:value,//se guarda en 'value' el name y value del input modificado
+        name: "",       // Campo para el nombre
+        document: "",   // Campo para el documento
+        condition: ""   // Campo para la condición
+    });
+
+    /**
+     * Maneja los cambios en los inputs y actualiza el estado
+     * @param {Object} event - Evento de cambio en el input
+     */
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setValues({
+            ...values,
+            [name]: value,
         });
-    }
-    const handleSubmit = (event) => {
-        event.preventDefault();  // Evita que la página se recargue
-        console.log(values);  // Muestra los datos en la consola
     };
     
-    
-    
-
     return (
         <div className="bg-gradient-to-r from-[rgb(103,153,254)]">
             {/* Contenedor adicional para el formulario (coso negro)*/}
             <div className="absolute w-[250px] h-[55px] left-1/2 top-[40px] bg-[#1E1E1E] rounded-[10px] -translate-x-1/2"></div>
 
             {/* Contenedor del formulario con estilos de fondo, bordes y espaciado */}
-            <form className="bg-[#d9d9d9] border-[30px] border-[#3c3c3c] p-[30px] w-[500px] h-[600px] mx-auto mt-[30px] rounded-[25px]" onSubmit={handleSubmit}>
+            <form className="bg-[#d9d9d9] border-[30px] border-[#3c3c3c] p-[30px] w-[500px] h-[600px] mx-auto mt-[30px] rounded-[25px]">
                 
                 {/* Título del formulario */}
                 <h1 className="text-center text-[32px]">FORMULARIO DE REGISTRO</h1>

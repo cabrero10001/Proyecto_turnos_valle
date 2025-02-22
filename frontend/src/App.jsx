@@ -1,13 +1,11 @@
-import { useState } from 'react'
-import Form from './components/form/form'
+import { useState } from 'react';
+import Form from './components/form/form';
+import './index.css';
+
 function App() {
-
-
   return (
-    <>
-      <Form />
-    </>
-  )
+    <Form />
+  );
 }
 
-export default App
+export default App;
