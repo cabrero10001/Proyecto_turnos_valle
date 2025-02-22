@@ -3,26 +3,31 @@ import './form.css'
 import { useState } from "react"
 
 const Form = () => {
-    const [values, setValues] = useState({
-        name: "",
+    const [values, setValues] = useState({  //El objeto dentro de 'useState' es el valor inicial
+        name: "",   //'values' contiene el objeto dentro de useState
         document: "",
         condition: ""
     })
     const handleInputChange = (event) =>{
-        const {name,value} =event.target;
-        setValues({
-            ...values,
-            [name]:value,
+        const {name,value} =event.target;//se desestructura el event.target el cual acumula el name,value y type de los input
+        setValues({//se modifica el estado de 'values'
+            ...values,// guarda las claves y valores anteriores
+            [name]:value,//se guarda en 'value' el name y value del input modificado
         });
     }
+    const handleSubmit = (event) => {
+        event.preventDefault();  // Evita que la página se recargue
+        console.log(values);  // Muestra los datos en la consola
+    };
+    
     
 
     return (
         <div>
-            <div class="box">
+            <div className="box">
                 
             </div>
-            <form class="form">
+            <form className="form" onSubmit={handleSubmit}>
                 <h1>FORMULARIO DE REGISTRO</h1>
 
                 <label htmlFor="name">Nombre</label>
@@ -30,7 +35,7 @@ const Form = () => {
                 type="text" 
                 name="name" 
                 placeholder="Jhon Doe Rodriguez"
-                class="input__form"
+                className="input__form"
                 onChange={handleInputChange}/>
 
                 <label htmlFor="document">Documento</label>
@@ -38,14 +43,15 @@ const Form = () => {
                 type="number" 
                 name="document" 
                 placeholder="Ingrese su documento"
-                class="input__form"
+                className="input__form"
                 onChange={handleInputChange}/>
                 
                 <label htmlFor="condition">Condicion</label>             
                 <input 
                     list="conditions" 
                     name="condition" 
-                    class="input__form"
+                    className="input__form"
+                    placeholder='N/A'
                     onChange={handleInputChange} 
                 />
                 <datalist id="conditions">

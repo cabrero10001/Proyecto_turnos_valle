@@ -28,17 +28,15 @@ h1{
 }
 label{
     font-size: 20px;
-
 }
     
 .box{
-position: absolute;
-width: 250px;
-height: 50px;
-left: 601px;
-top: 65px;
-
-background: #1E1E1E;
-border-radius: 10px;
-
+    position: absolute;
+    margin:auto;
+    width: 250px;
+    height: 50px;
+    left: 601px;
+    top: 65px;
+    background: #1E1E1E;
+    border-radius: 10px;
 }
