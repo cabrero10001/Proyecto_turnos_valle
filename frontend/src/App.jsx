@@ -2,8 +2,10 @@
 import "../src/index.css";
 
 // Importa los componentes Form y Ticket desde sus respectivas rutas
-import Form from "./components/form/form";
-import Ticket from "./components/ticket/ticket";
+import Form from "../src/components/qr_option/form/form";
+import Ticket from "../src/components/qr_option/ticket/ticket";
+import ticketop from "../src/components/operador/ticket/ticket_op"; // Nuevo componente operador ticket
+import formop from "../src/components/operador/form/form_op"; // Nuevo componente operador form
 
 // Importa las herramientas necesarias de React Router para manejar la navegación
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -19,6 +21,12 @@ function App() {
 
         {/* Define la ruta "/ticket" y renderiza el componente Ticket */}
         <Route path="/ticket" element={<Ticket />} />
+
+        {/* Define una nueva ruta "/about" y renderiza el componente About */}
+        <Route path="/ticketop" element={<ticketop />} />
+
+        {/* Define una nueva ruta "/contact" y renderiza el componente Contact */}
+        <Route path="/formop" element={<formop />} />
       </Routes>
     </BrowserRouter>
   );

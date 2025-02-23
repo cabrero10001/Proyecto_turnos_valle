@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ipsLogo from "../../images/ips.png";
+import ipsLogo from "../../../images/ips.png";
 import { Link } from "react-router-dom";
 
 /**
@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
  * - Documento
  * - Condición
  */
-const Form = () => {
+const formop = () => {
   const [values, setValues] = useState({
     name: "",
     typeDocument: "",
@@ -44,7 +44,7 @@ const Form = () => {
 
       {/* Contenedor del formulario con estilos de fondo, bordes y espaciado */}
       <form
-        className="bg-[#d9d9d9] border-[20px] border-[#3c3c3c] p-5 md:p-[40px_50px_0px_50px] w-[90%] max-w-[500px] h-auto md:h-[600px] mx-auto mt-[80px] rounded-[0]" // Manteniendo el tamaño original
+        className="bg-[#d9d9d9] border-[20px] border-[#3c3c3c] p-5 md:p-[40px_50px_0px_50px] w-[90%] max-w-[500px] h-auto md:h-[600px] mx-auto mt-[80px] mb-[20px] rounded-[0]" // Manteniendo el tamaño original
         onSubmit={handleSubmit}
       >
         {/* Contenedor adicional para el formulario (coso negro) */}
@@ -121,4 +121,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default formop;
