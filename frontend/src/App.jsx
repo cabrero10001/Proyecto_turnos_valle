@@ -8,7 +8,12 @@ import Ticket from './components/ticket/ticket';
 // Importa las herramientas necesarias de React Router para manejar la navegación
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-// Componente principal de la aplicación
+/**
+ * Componente principal de la aplicación.
+ * - Define las rutas de navegación:
+ *   - "/" → Renderiza el formulario (`Form`)
+ *   - "/ticket" → Renderiza el ticket (`Ticket`)
+ */
 function App() {
   return (
     // Envuelve la aplicación en BrowserRouter para habilitar la funcionalidad de enrutamiento
