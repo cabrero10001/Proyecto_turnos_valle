@@ -10,6 +10,7 @@ import { useState } from "react";
 const Form = () => {
     const [values, setValues] = useState({
         name: "",
+        typeDocument: "",
         document: "",
         condition: ""
     })
@@ -29,44 +30,58 @@ const Form = () => {
     
 
     return (
-        <div className="bg-gradient-to-r from-[rgb(103,153,254)]">
-            {/* Contenedor adicional para el formulario (coso negro)*/}
-            <div className="absolute w-[250px] h-[55px] left-1/2 top-[40px] bg-[#1E1E1E] rounded-[10px] -translate-x-1/2"></div>
+        <div className="relative min-h-screen w-screen bg-gradient-to-l from-[#E1EAF0] via-[#4187B5] to-[#2F688D] overflow-y-auto">
 
             {/* Contenedor del formulario con estilos de fondo, bordes y espaciado */}
-            <form className="bg-[#d9d9d9] border-[30px] border-[#3c3c3c] p-[30px] w-[500px] h-[600px] mx-auto mt-[30px] rounded-[25px]" onSubmit={handleSubmit}>
+            <form className="bg-[#d9d9d9] border-[20px] border-[#3c3c3c] p-[35px_50px_0px_50px] w-[500px] h-[600px] mx-auto mt-[50px] rounded-[0]" onSubmit={handleSubmit}>
+                {/* Contenedor adicional para el formulario (coso negro)*/} 
+                <div className="absolute w-[192px] h-[60px] left-1/2 top-[40px] bg-[#1E1E1E] rounded-[10px] -translate-x-1/2"></div>
                 
                 {/* Título del formulario */}
-                <h1 className="text-center text-[32px]">FORMULARIO DE REGISTRO</h1>
+                <h1 className="text-center text-[30px] mb-[5px] font-bold">FORMULARIO DE REGISTRO</h1>
                 
                 {/* Campo para el nombre */}
-                <label htmlFor="name">Nombre</label>
+                <label htmlFor="name" className="font-bold">Nombre</label>
                 <input 
                     type="text" 
                     name="name" 
-                    placeholder="Nombre"
-                    className="text-[20px] w-full box-border p-[10px_12px] my-[20px] bg-none  border-b-[3px] border-b-black"
+                    className="text-[16px] w-full box-border p-[10px_12px] mb-[15px] bg-none border-b-[3px] border-b-[#6EA3C7]"
                     onChange={handleInputChange}
                 />
-
+                {/* Campo para el TIPO DE DOCUMENTO */}
+                <label htmlFor="condition" className="font-bold">Tipo de Documento</label>             
+                <input 
+                    list="typeDocument" 
+                    name="typeDocument" 
+                    className="text-[16px] w-full box-border bg-[#fff] p-[8px_12px] mb-[15px] mt-[10px]"
+                    onChange={handleInputChange} 
+                    placeholder="C.C"
+                />
+                <datalist id="typeDocument">
+                    <option value="Cédula de ciudadania"></option>
+                    <option value="Pasaporte "></option>
+                    <option value="Tarjeta de identidad"></option>
+                    <option value="Cédula de extranjeria"></option>
+                    <option value="Registro civil"></option>
+                    <option value="Permiso especial de permanencia"></option>
+                </datalist>
                 {/* Campo para el documento */}
-                <label htmlFor="document">Documento</label>
+                <label htmlFor="document" className="font-bold">Documento</label>
                 <input 
                     type="number" 
                     name="document" 
-                    placeholder="Ingrese su documento"
-                    className="text-[20px] w-full box-border p-[10px_12px] my-[20px] bg-none  border-b-[3px] border-b-black"
+                    className="text-[16px] w-full box-border p-[10px_12px] mb-[15px] bg-none border-b-[3px] border-b-[#6EA3C7]"
                     onChange={handleInputChange}
                 />
                 
                 {/* Campo para la condición con una lista de opciones */}
-                <label htmlFor="condition">Condición</label>             
+                <label htmlFor="condition" className="font-bold">Condición</label>             
                 <input 
                     list="conditions" 
                     name="condition" 
-                    placeholder="condicion"
-                    className="text-[20px] w-full box-border p-[10px_12px] my-[20px] bg-none border-b-[3px] border-b-black"
+                    className="text-[16px] w-full box-border bg-[#fff] p-[8px_12px] mb-[15px] mt-[10px]"
                     onChange={handleInputChange} 
+                    placeholder="N/A"
                 />
                 <datalist id="conditions">
                     <option value="No aplica"></option>
@@ -78,8 +93,8 @@ const Form = () => {
                 {/* Botón de envío del formulario */}
                 <button 
                     type="submit" 
-                    className="bg-[#1E1E1E] w-[150px] h-[50px] text-white py-3 mt-4 rounded-lg hover:bg-[#3c3c3c] transition-colors mx-auto block"
-                >Enviar</button>
+                    className="bg-[#6EA3C7] font-bold w-[150px] h-[50px] text-white py-3 mt-0 rounded-lg hover:bg-[#3c3c3c] transition-colors mx-auto block"
+                >ENVIAR</button>
             </form>
         </div>
     );
