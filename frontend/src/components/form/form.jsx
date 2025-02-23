@@ -33,12 +33,12 @@ const Form = () => {
         <div className="relative min-h-screen w-screen bg-gradient-to-l from-[#E1EAF0] via-[#4187B5] to-[#2F688D] overflow-y-auto">
 
             {/* Contenedor del formulario con estilos de fondo, bordes y espaciado */}
-            <form className="bg-[#d9d9d9] border-[20px] border-[#3c3c3c] p-[35px_50px_0px_50px] w-[500px] h-[600px] mx-auto mt-[50px] rounded-[0]" onSubmit={handleSubmit}>
+            <form className="bg-[#d9d9d9] border-[20px] border-[#3c3c3c] p-[40px_50px_0px_50px] w-[500px] h-[600px] mx-auto mt-[50px] rounded-[0]" onSubmit={handleSubmit}>
                 {/* Contenedor adicional para el formulario (coso negro)*/} 
                 <div className="absolute w-[192px] h-[60px] left-1/2 top-[40px] bg-[#1E1E1E] rounded-[10px] -translate-x-1/2"></div>
                 
                 {/* Título del formulario */}
-                <h1 className="text-center text-[30px] mb-[5px] font-bold">FORMULARIO DE REGISTRO</h1>
+                <h1 className="text-center text-[27px] mb-[18px] font-extrabold leading-[30px] tracking-[5px] whitespace-pre-line">FORMULARIO {"\n"}DE{"\n"} REGISTRO</h1>
                 
                 {/* Campo para el nombre */}
                 <label htmlFor="name" className="font-bold">Nombre</label>
