@@ -30,11 +30,11 @@ const Form = () => {
     return (
         <div className="bg-gradient-to-r from-[rgb(103,153,254)]">
             {/* Contenedor adicional para el formulario (coso negro)*/}
-            <div className="absolute w-[250px] h-[55px] left-1/2 top-[40px] bg-[#1E1E1E] rounded-[10px] -translate-x-1/2"></div>
+            
 
             {/* Contenedor del formulario con estilos de fondo, bordes y espaciado */}
             <form className="bg-[#d9d9d9] border-[30px] border-[#3c3c3c] p-[30px] w-[500px] h-[600px] mx-auto mt-[30px] rounded-[25px]">
-                
+            <div className="absolute w-[250px] h-[55px] left-1/2 top-[40px] bg-[#1E1E1E] rounded-[10px] -translate-x-1/2"></div>
                 {/* Título del formulario */}
                 <h1 className="text-center text-[32px]">FORMULARIO DE REGISTRO</h1>
                 
