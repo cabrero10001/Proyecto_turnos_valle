@@ -1,7 +1,9 @@
+// Importa useState para manejar el estado del formulario y useNavigate para la redirección
 import { useState } from "react";
-import ipsLogo from "../../../images/ips.png";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; 
 
+// Importa la imagen del logo de la IPS
+import ipsLogo from "../../../images/ips.png";
 /**
  * Componente funcional Form
  * Este componente representa un formulario de registro con los campos:
@@ -26,9 +28,12 @@ const Form = () => {
     });
   };
 
+  const navigate = useNavigate(); // Permite la navegación entre rutas
+
   const handleSubmit = (event) => {
     event.preventDefault(); // Evita que la página se recargue
     console.log(values); // Muestra los datos en la consola
+    navigate("/ticket"); // Redirige a la ruta "/ticket"
   };
 
   return (

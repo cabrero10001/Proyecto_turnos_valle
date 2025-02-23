@@ -6,6 +6,7 @@ import Form from "../src/components/qr_option/form/form";
 import Ticket from "../src/components/qr_option/ticket/ticket";
 import Ticketop from "../src/components/operador/ticket/ticket_op"; // Nuevo componente operador ticket
 import Formop from "../src/components/operador/form/form_op"; // Nuevo componente operador form
+import Screen from "./components/mainScreen/screen"
 
 // Importa las herramientas necesarias de React Router para manejar la navegación
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -27,6 +28,9 @@ function App() {
 
         {/* Define una nueva ruta "/contact" y renderiza el componente Contact */}
         <Route path="/formop" element={<Formop />} />
+
+        {/* Define una nueva ruta "/screen" y renderiza el componente Screen */}
+        <Route path="/screen" element={<Screen />} />
       </Routes>
     </BrowserRouter>
   );
