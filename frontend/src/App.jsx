@@ -1,12 +1,9 @@
 import { useState } from "react";
-import Body from "./components/body.jsx";
+import Form from "./components/form/form";
 import "./index.css";
+
 function App() {
-  return (
-    <>
-      <Body />
-    </>
-  );
+  return <Form />;
 }
 
 export default App;
