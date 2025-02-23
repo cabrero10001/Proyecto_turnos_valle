@@ -4,6 +4,7 @@ import { useState } from "react";
  * Componente funcional Form
  * Este componente representa un formulario de registro con los campos:
  * - Nombre
+ * - Tipo de Documento   
  * - Documento
  * - Condición
  */
