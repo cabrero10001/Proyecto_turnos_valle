@@ -45,7 +45,7 @@ const Form = () => {
                 <input 
                     type="text" 
                     name="name" 
-                    className="text-[16px] w-full box-border p-[10px_12px] mb-[15px] bg-none border-b-[3px] border-b-[#6EA3C7]"
+                    className="text-[14px] w-full box-border p-[10px_12px] mb-[15px] bg-none border-b-[3px] border-b-[#6EA3C7]"
                     onChange={handleInputChange}
                 />
                 {/* Campo para el TIPO DE DOCUMENTO */}
@@ -53,7 +53,7 @@ const Form = () => {
                 <input 
                     list="typeDocument" 
                     name="typeDocument" 
-                    className="text-[16px] w-full box-border bg-[#fff] p-[8px_12px] mb-[15px] mt-[10px]"
+                    className="text-[14px] w-full box-border bg-[#fff] p-[8px_12px] mb-[15px] mt-[10px]"
                     onChange={handleInputChange} 
                     placeholder="C.C"
                 />
@@ -70,7 +70,7 @@ const Form = () => {
                 <input 
                     type="number" 
                     name="document" 
-                    className="text-[16px] w-full box-border p-[10px_12px] mb-[15px] bg-none border-b-[3px] border-b-[#6EA3C7]"
+                    className="text-[14px] w-full box-border p-[10px_12px] mb-[15px] bg-none border-b-[3px] border-b-[#6EA3C7]"
                     onChange={handleInputChange}
                 />
                 
@@ -79,7 +79,7 @@ const Form = () => {
                 <input 
                     list="conditions" 
                     name="condition" 
-                    className="text-[16px] w-full box-border bg-[#fff] p-[8px_12px] mb-[15px] mt-[10px]"
+                    className="text-[14px] w-full box-border bg-[#fff] p-[8px_12px] mb-[15px] mt-[10px]"
                     onChange={handleInputChange} 
                     placeholder="N/A"
                 />
