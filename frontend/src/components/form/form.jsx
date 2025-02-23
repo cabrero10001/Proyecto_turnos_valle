@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ipsLogo from "../../images/ips.png"
 
 /**
  * Componente funcional Form
@@ -33,6 +34,11 @@ const Form = () => {
     return (
         <div className="relative min-h-screen w-screen bg-gradient-to-l from-[#E1EAF0] via-[#4187B5] to-[#2F688D] overflow-y-auto">
 
+            {/* imagen de la ips */}
+            <div className="absolute top-0 left-0 m-4">
+                <img src={ipsLogo} alt="IPS Logo" className="w-30 h-15" />
+            </div>
+            
             {/* Contenedor del formulario con estilos de fondo, bordes y espaciado */}
             <form className="bg-[#d9d9d9] border-[20px] border-[#3c3c3c] p-[40px_50px_0px_50px] w-[500px] h-[600px] mx-auto mt-[50px] rounded-[0]" onSubmit={handleSubmit}>
                 {/* Contenedor adicional para el formulario (coso negro)*/} 
