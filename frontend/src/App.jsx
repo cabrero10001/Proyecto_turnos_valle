@@ -1,9 +1,12 @@
-import { useState } from "react";
+import "../src/index.css";
 import Form from "./components/form/form";
-import "./index.css";
-
+import Ticket from "./components/ticket/ticket";
 function App() {
-  return <Form />;
+  return (
+    <>
+      <Form />
+      <Ticket />
+    </>
+  );
 }
-
 export default App;
