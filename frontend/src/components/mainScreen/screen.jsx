@@ -1,5 +1,5 @@
 import { useState, useEffect} from "react";
-import ipsLogo from "../../images/ips.png";
+import ipsLogo from "../../images/ipsBlack.png";
 /**
  * Componente funcional Form
  * Este componente representa un formulario de registro con los campos:
@@ -38,36 +38,51 @@ const Screen = () => {
                             NOMBRE - TURNO
                         </h2>
                     </div>
-                    <div className="w-[421px] h-[90px] bg-[#FFCB1F] rounded-[20px] flex justify-center items-center">
-                        {/* SEÑALADOR DE TURNO*/}
-                        <div className="w-[421px] h-[90px] bg-none rounded-[20px]">
-                            <div class="  translate-x-[390%] translate-y-[37%] w-0 h-0 border-t-[25px] border-t-transparent border-b-[25px] border-b-transparent border-r-[40px] border-r-blue-600"></div>
+                    {/* PRIMER LLAMADO DE TURNO*/}
+                    <div className="relative w-[421px] h-[90px] bg-[#FFCB1F] rounded-[20px] flex items-center">
+                        {/* SEÑALADOR DE TURNO */}
+                        <div className="absolute left-37">
+                            <div className="w-0 h-0 border-t-[25px] border-t-transparent border-b-[25px] border-b-transparent border-r-[40px] border-r-blue-600"></div>
                         </div>
-                        <p className="w-[300px]">Javier Gomez</p>
+                        <p className="ml-15 text-[25px] font-bold">1</p>
+                        <p className="absolute text-[20px] right-0 mr-[15px] w-[200px] max-w-full break-words text-center font-bold">Javier Alexander Gomez Delgado</p>
                     </div>
-                    <div className="w-[421px] h-[90px] bg-[#FF4545] rounded-[20px]">
-                        {/* SEÑALADOR DE TURNO*/}
-                        <div className="w-[421px] h-[90px] bg-none rounded-[20px]">
-                            <div class="  translate-x-[390%] translate-y-[37%] w-0 h-0 border-t-[25px] border-t-transparent border-b-[25px] border-b-transparent border-r-[40px] border-r-blue-600"></div>
+
+                    {/* SEGUNDO LLAMADO DE TURNO*/}
+                    <div className="relative w-[421px] h-[90px] bg-[#FF4545] rounded-[20px] flex items-center">
+                        {/* SEÑALADOR DE TURNO */}
+                        <div className="absolute left-37">
+                            <div className="w-0 h-0 border-t-[25px] border-t-transparent border-b-[25px] border-b-transparent border-r-[40px] border-r-blue-600"></div>
                         </div>
+                        <p className="ml-15 text-[25px] font-bold">2</p>
+                        <p className="absolute text-[20px] right-0 mr-[15px] w-[200px] max-w-full break-words text-center font-bold">D110</p>
                     </div>
-                    <div className="w-[421px] h-[90px] bg-[#FF4545] rounded-[20px]">
-                        {/* SEÑALADOR DE TURNO*/}
-                        <div className="w-[421px] h-[90px] bg-none rounded-[20px]">
-                            <div class="  translate-x-[390%] translate-y-[37%] w-0 h-0 border-t-[25px] border-t-transparent border-b-[25px] border-b-transparent border-r-[40px] border-r-blue-600"></div>
+                    {/* TERCER LLAMADO DE TURNO*/}
+                    <div className="relative w-[421px] h-[90px] bg-[#FF4545] rounded-[20px] flex items-center">
+                        {/* SEÑALADOR DE TURNO */}
+                        <div className="absolute left-37">
+                            <div className="w-0 h-0 border-t-[25px] border-t-transparent border-b-[25px] border-b-transparent border-r-[40px] border-r-blue-600"></div>
                         </div>
+                        <p className="ml-15 text-[25px] font-bold">3</p>
+                        <p className="absolute text-[20px] right-0 mr-[15px] w-[200px] max-w-full break-words text-center font-bold">Alexs Quiroz Gonzales</p>
                     </div>
-                    <div className="w-[421px] h-[90px] bg-[#FF4545] rounded-[20px]">
-                        {/* SEÑALADOR DE TURNO*/}
-                        <div className="w-[421px] h-[90px] bg-none rounded-[20px]">
-                            <div class="  translate-x-[390%] translate-y-[37%] w-0 h-0 border-t-[25px] border-t-transparent border-b-[25px] border-b-transparent border-r-[40px] border-r-blue-600"></div>
+                    {/* CUARTO LLAMADO DE TURNO*/}
+                    <div className="relative w-[421px] h-[90px] bg-[#FF4545] rounded-[20px] flex items-center">
+                        {/* SEÑALADOR DE TURNO */}
+                        <div className="absolute left-37">
+                            <div className="w-0 h-0 border-t-[25px] border-t-transparent border-b-[25px] border-b-transparent border-r-[40px] border-r-blue-600"></div>
                         </div>
+                        <p className="ml-15 text-[25px] font-bold">4</p>
+                        <p className="absolute text-[20px] right-0 mr-[15px] w-[200px] max-w-full break-words text-center font-bold">N92</p>
                     </div>
-                    <div className="w-[421px] h-[90px] bg-[#FF4545] rounded-[20px]">
-                        {/* SEÑALADOR DE TURNO*/}
-                        <div className="w-[421px] h-[90px] bg-none rounded-[20px]">
-                            <div class="  translate-x-[390%] translate-y-[37%] w-0 h-0 border-t-[25px] border-t-transparent border-b-[25px] border-b-transparent border-r-[40px] border-r-blue-600"></div>
+                    {/* QUINTO LLAMADO DE TURNO*/}
+                    <div className="relative w-[421px] h-[90px] bg-[#FF4545] rounded-[20px] flex items-center">
+                        {/* SEÑALADOR DE TURNO */}
+                        <div className="absolute left-37">
+                            <div className="w-0 h-0 border-t-[25px] border-t-transparent border-b-[25px] border-b-transparent border-r-[40px] border-r-blue-600"></div>
                         </div>
+                        <p className="ml-15 text-[25px] font-bold">5</p>
+                        <p className="absolute text-[20px] right-0 mr-[15px] w-[200px] max-w-full break-words text-center font-bold">Javier Alexander Gomez Delgado</p>
                     </div>
                 </div>
                 {/* SECCION (Derecha) */}

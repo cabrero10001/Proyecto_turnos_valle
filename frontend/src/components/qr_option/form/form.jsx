@@ -55,17 +55,17 @@ const Form = () => {
         {/* Contenedor adicional para el formulario (coso negro) */}
         <div className="absolute w-[150px] h-[50px] md:w-[192px] md:h-[60px] left-1/2 top-[20px] md:top-[30px] mt-[50px] bg-[#1E1E1E] rounded-[10px] -translate-x-1/2"></div>{" "}
         {/* Título del formulario */}
-        <h1 className="text-center text-[20.4px] md:text-[23.1px] mb-[15.3px] font-extrabold leading-[25.5px] tracking-[4.25px] whitespace-pre-line">
+        <h1 className="text-center text-[20.4px] md:text-[23.1px] mb-[15.3px] mt-[15px]  font-extrabold leading-[25.5px] tracking-[4.25px] whitespace-pre-line">
           FORMULARIO {"\n"}DE{"\n"} REGISTRO
         </h1>
         {/* Campo para el nombre */}
         <label htmlFor="name" className="font-bold">
-          Nombre
+          Nombre Completo
         </label>
         <input
           type="text"
           name="name"
-          className="text-[10.2px] w-full box-border p-[7.65px_9px] mb-[10.8px] bg-none border-b-[2.175px] border-b-[#6EA3C7]" // Reducido en un 15%
+          className="text-[15px] w-full box-border p-[10px_9px] mb-[20px] bg-none border-b-[2.175px] border-b-[#6EA3C7]" // Reducido en un 15%
           onChange={handleInputChange}
         />
         {/* Campo para el TIPO DE DOCUMENTO */}
@@ -75,7 +75,7 @@ const Form = () => {
         <input
           list="typeDocument"
           name="typeDocument"
-          className="text-[10.2px] w-full box-border bg-[#fff] p-[5.78px_9px] mb-[10.8px] mt-[7.225px]" // Reducido en un 15%
+          className="text-[15px] w-full box-border bg-[#fff] p-[5.78px_9px] mb-[20px] mt-[7.225px]" // Reducido en un 15%
           onChange={handleInputChange}
           placeholder="C.C"
         />
@@ -94,7 +94,7 @@ const Form = () => {
         <input
           type="number"
           name="document"
-          className="text-[10.2px] w-full box-border p-[7.65px_9px] mb-[10.8px] bg-none border-b-[2.175px] border-b-[#6EA3C7]" // Reducido en un 15%
+          className="text-[15px] w-full box-border p-[7.65px_9px] mb-[20px] bg-none border-b-[2.175px] border-b-[#6EA3C7]" // Reducido en un 15%
           onChange={handleInputChange}
         />
         {/* Campo para la condición con una lista de opciones */}
@@ -104,7 +104,7 @@ const Form = () => {
         <input
           list="conditions"
           name="condition"
-          className="text-[10.2px] w-full box-border bg-[#fff] p-[5.78px_9px] mb-[10.8px] mt-[7.225px]" // Reducido en un 15%
+          className="text-[15px] w-full box-border bg-[#fff] p-[5.78px_9px] mb-[20px] mt-[7.225px]" // Reducido en un 15%
           onChange={handleInputChange}
           placeholder="N/A"
         />
@@ -117,7 +117,7 @@ const Form = () => {
         {/* Botón de envío del formulario */}
         <button
           type="submit"
-          className="bg-[#6EA3C7] font-bold w-[108.375px] h-[36.125px] text-white py-[2.175px] mt-0 rounded-lg hover:bg-[#3c3c3c] transition-colors mx-auto block" // Reducido en un 15%
+          className="bg-[#6EA3C7] font-bold w-[150px] h-[50px] text-white py-[2.175px] mt-0 rounded-lg hover:bg-[#3c3c3c] transition-colors mx-auto block" // Reducido en un 15%
         >
           ENVIAR
         </button>
