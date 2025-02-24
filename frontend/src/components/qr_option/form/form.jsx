@@ -12,6 +12,7 @@ import ipsLogo from "../../../images/ips.png";
  * - Condición
  */
 const Form = () => {
+  // Define el estado inicial del formulario con campos vacíos
   const [values, setValues] = useState({
     name: "",
     typeDocument: "",
@@ -19,12 +20,16 @@ const Form = () => {
     condition: "",
   });
 
+  // Función para manejar los cambios en los campos del formulario
   const handleInputChange = (event) => {
-    const { name, value } = event.target; //se desestructura el event.target el cual acumula el name,value y type de los input
+    // Desestructura el evento para obtener el nombre y el valor del campo
+    const { name, value } = event.target;
+    // Actualiza el estado del formulario
     setValues({
-      //se modifica el estado de 'values'
-      ...values, // guarda las claves y valores anteriores
-      [name]: value, //se guarda en 'value' el name y value del input modificado
+      // Mantiene los valores anteriores del estado
+      ...values,
+      // Actualiza el valor del campo que ha cambiado
+      [name]: value,
     });
   };
 
@@ -37,23 +42,25 @@ const Form = () => {
   };
 
   return (
+    // Contenedor principal con estilos de fondo y altura mínima de pantalla
     <div className="relative min-h-screen w-screen bg-gradient-to-l from-[#E1EAF0] via-[#4187B5] to-[#2F688D] overflow-y-auto">
-      {/* imagen de la ips */}
+      {/* Contenedor de la imagen de la IPS */}
       <div className="absolute top-0 left-0 m-4">
+        {/* Imagen de la IPS */}
         <img
           src={ipsLogo}
           alt="IPS Logo"
-          className="w-20 h-10 md:w-30 md:h-15" // Manteniendo el tamaño original
+          className="w-20 h-10 md:w-30 md:h-15" // Mantiene el tamaño original
         />
       </div>
 
       {/* Contenedor del formulario con estilos de fondo, bordes y espaciado */}
       <form
-        className="bg-[#d9d9d9] border-[20px] border-[#3c3c3c] p-5 md:p-[40px_50px_0px_50px] w-[90%] max-w-[500px] h-auto md:h-[600px] mx-auto mt-[80px] mb-[20px] rounded-[0]" // Manteniendo el tamaño original
+        className="bg-[#d9d9d9] border-[20px] border-[#3c3c3c] p-5 md:p-[40px_50px_0px_50px] w-[90%] max-w-[500px] h-auto md:h-[600px] mx-auto mt-[80px] mb-[20px] rounded-[0]" // Mantiene el tamaño original
         onSubmit={handleSubmit}
       >
         {/* Contenedor adicional para el formulario (coso negro) */}
-        <div className="absolute w-[150px] h-[50px] md:w-[192px] md:h-[60px] left-1/2 top-[20px] md:top-[30px] mt-[50px] bg-[#1E1E1E] rounded-[10px] -translate-x-1/2"></div>{" "}
+        <div className="absolute w-[150px] h-[50px] md:w-[192px] md:h-[60px] left-1/2 top-[20px] md:top-[30px] mt-[50px] bg-[#1E1E1E] rounded-[10px] -translate-x-1/2"></div>
         {/* Título del formulario */}
         <h1 className="text-center text-[20.4px] md:text-[23.1px] mb-[15.3px] mt-[15px]  font-extrabold leading-[25.5px] tracking-[4.25px] whitespace-pre-line">
           FORMULARIO {"\n"}DE{"\n"} REGISTRO
@@ -79,6 +86,7 @@ const Form = () => {
           onChange={handleInputChange}
           placeholder="C.C"
         />
+        {/* Lista de opciones para el tipo de documento */}
         <datalist id="typeDocument">
           <option value="Cédula de ciudadania"></option>
           <option value="Pasaporte "></option>
@@ -108,6 +116,7 @@ const Form = () => {
           onChange={handleInputChange}
           placeholder="N/A"
         />
+        {/* Lista de opciones para la condición */}
         <datalist id="conditions">
           <option value="No aplica"></option>
           <option value="Adulto mayor"></option>

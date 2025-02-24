@@ -1,7 +1,7 @@
 // Importa los estilos globales de la aplicación desde index.css
 import "../src/index.css";
 
-// Importa los componentes Form y Ticket desde sus respectivas rutas
+// Importa los componentes Form, Ticket, Ticketop y Formop desde sus respectivas rutas
 import Form from "../src/components/qr_option/form/form";
 import Ticket from "../src/components/qr_option/ticket/ticket";
 import Ticketop from "../src/components/operador/ticket/ticket_op"; // Nuevo componente operador ticket
@@ -23,10 +23,10 @@ function App() {
         {/* Define la ruta "/ticket" y renderiza el componente Ticket */}
         <Route path="/ticket" element={<Ticket />} />
 
-        {/* Define una nueva ruta "/about" y renderiza el componente About */}
+        {/* Define la ruta "/ticketop" y renderiza el componente Ticketop */}
         <Route path="/ticketop" element={<Ticketop />} />
 
-        {/* Define una nueva ruta "/contact" y renderiza el componente Contact */}
+        {/* Define la ruta "/formop" y renderiza el componente Formop */}
         <Route path="/formop" element={<Formop />} />
 
         {/* Define una nueva ruta "/screen" y renderiza el componente Screen */}
