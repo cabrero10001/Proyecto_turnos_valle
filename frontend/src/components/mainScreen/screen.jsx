@@ -42,7 +42,7 @@ const Screen = () => {
                     <div className="relative w-[421px] h-[90px] bg-[#FFCB1F] rounded-[20px] flex items-center">
                         {/* SEÑALADOR DE TURNO */}
                         <div className="absolute left-37">
-                            <div className="w-0 h-0 border-t-[25px] border-t-transparent border-b-[25px] border-b-transparent border-r-[40px] border-r-blue-600"></div>
+                        <div className="w-0 h-0 border-t-[25px] border-t-transparent border-b-[25px] border-b-transparent border-r-[40px]" style={{ borderRightColor: "#44A8FF" }}></div>
                         </div>
                         <p className="ml-15 text-[25px] font-bold">1</p>
                         <p className="absolute text-[20px] right-0 mr-[15px] w-[200px] max-w-full break-words text-center font-bold">Javier Alexander Gomez Delgado</p>
@@ -52,7 +52,7 @@ const Screen = () => {
                     <div className="relative w-[421px] h-[90px] bg-[#FF4545] rounded-[20px] flex items-center">
                         {/* SEÑALADOR DE TURNO */}
                         <div className="absolute left-37">
-                            <div className="w-0 h-0 border-t-[25px] border-t-transparent border-b-[25px] border-b-transparent border-r-[40px] border-r-blue-600"></div>
+                        <div className="w-0 h-0 border-t-[25px] border-t-transparent border-b-[25px] border-b-transparent border-r-[40px]" style={{ borderRightColor: "#44A8FF" }}></div>
                         </div>
                         <p className="ml-15 text-[25px] font-bold">2</p>
                         <p className="absolute text-[20px] right-0 mr-[15px] w-[200px] max-w-full break-words text-center font-bold">D110</p>
@@ -61,7 +61,7 @@ const Screen = () => {
                     <div className="relative w-[421px] h-[90px] bg-[#FF4545] rounded-[20px] flex items-center">
                         {/* SEÑALADOR DE TURNO */}
                         <div className="absolute left-37">
-                            <div className="w-0 h-0 border-t-[25px] border-t-transparent border-b-[25px] border-b-transparent border-r-[40px] border-r-blue-600"></div>
+                        <div className="w-0 h-0 border-t-[25px] border-t-transparent border-b-[25px] border-b-transparent border-r-[40px]" style={{ borderRightColor: "#44A8FF" }}></div>
                         </div>
                         <p className="ml-15 text-[25px] font-bold">3</p>
                         <p className="absolute text-[20px] right-0 mr-[15px] w-[200px] max-w-full break-words text-center font-bold">Alexs Quiroz Gonzales</p>
@@ -70,7 +70,7 @@ const Screen = () => {
                     <div className="relative w-[421px] h-[90px] bg-[#FF4545] rounded-[20px] flex items-center">
                         {/* SEÑALADOR DE TURNO */}
                         <div className="absolute left-37">
-                            <div className="w-0 h-0 border-t-[25px] border-t-transparent border-b-[25px] border-b-transparent border-r-[40px] border-r-blue-600"></div>
+                        <div className="w-0 h-0 border-t-[25px] border-t-transparent border-b-[25px] border-b-transparent border-r-[40px]" style={{ borderRightColor: "#44A8FF" }}></div>
                         </div>
                         <p className="ml-15 text-[25px] font-bold">4</p>
                         <p className="absolute text-[20px] right-0 mr-[15px] w-[200px] max-w-full break-words text-center font-bold">N92</p>
@@ -79,7 +79,7 @@ const Screen = () => {
                     <div className="relative w-[421px] h-[90px] bg-[#FF4545] rounded-[20px] flex items-center">
                         {/* SEÑALADOR DE TURNO */}
                         <div className="absolute left-37">
-                            <div className="w-0 h-0 border-t-[25px] border-t-transparent border-b-[25px] border-b-transparent border-r-[40px] border-r-blue-600"></div>
+                        <div className="w-0 h-0 border-t-[25px] border-t-transparent border-b-[25px] border-b-transparent border-r-[40px]" style={{ borderRightColor: "#44A8FF" }}></div>
                         </div>
                         <p className="ml-15 text-[25px] font-bold">5</p>
                         <p className="absolute text-[20px] right-0 mr-[15px] w-[200px] max-w-full break-words text-center font-bold">Javier Alexander Gomez Delgado</p>
