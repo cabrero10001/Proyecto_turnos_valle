@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify
-from flask_cors import CORS
+from flask_cors import CORS, cro
 from ConexionDB import Conexion
 
 app = Flask(__name__)
@@ -27,7 +27,7 @@ def insertar_datos():
     except Exception as e:
         conexion.rollback()
         mensaje = {"error": str(e)}
-    return jsonify(mensaje)
+        return jsonify(mensaje)
 
 #transforma la tabla de tipos de documentoa json
 @app.route('/tiposdocumento', methods=['GET'])
