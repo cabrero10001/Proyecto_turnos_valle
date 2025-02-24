@@ -3,7 +3,33 @@ from flask_cors import CORS
 from ConexionDB import Conexion
 
 app = Flask(__name__)
-CORS(app)
+"""app.config['CORS_HEADERS'] = 'Content-Type'
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)"""
+
+@app.after_request
+def agregar_headers_cors(response):
+    response.headers.add("Access-Control-Allow-Origin", "*")  
+    response.headers.add("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE")  
+    response.headers.add("Access-Control-Allow-Headers", "Content-Type, Authorization")  
+    return response
+
+@app.route('/insertarDatosPacientes', methods=['POST'])
+def insertar_datos():
+    data = request.json
+    nombre = data['name']
+    cedula = data['document']
+    tipoDocumento = data['typeDocument']
+    condicion = data['condition']
+    conexion = Conexion()
+    cursor = conexion.cursor()
+    consultaSQL = "INSERT INTO pacientes (cedula, nombre, tipo_persona_FK, tipo_documento_FK) VALUES (%s, %s, %s, %s)"
+    cursor.execute(consultaSQL, (cedula, nombre, condicion, tipoDocumento))
+    conexion.commit()
+    cursor.close()
+    conexion.close()
+    return jsonify({"mensaje": "Datos insertados correctamente"})
+
+
 
 #transforma la tabla de tipos de documentoa json
 @app.route('/tiposdocumento', methods=['GET'])

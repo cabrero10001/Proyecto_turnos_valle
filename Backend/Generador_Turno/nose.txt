@@ -1,0 +1,6 @@
+"""if request.method == 'OPTIONS':
+        respuesta = jsonify({"mensaje": "Metodo options permitido"})
+        respuesta.headers.add('Access-Control-Allow-Origin', '*')
+        respuesta.headers.add('Access-Control-Allow-Methods', 'POST, GET, OPTIONS')
+        respuesta.headers.add('Access-Control-Allow-Headers', 'content-type, Authorization')
+        return respuesta, 200"""

@@ -27,28 +27,59 @@ export default function Form () {
         });
     }, []);
 
+    const [formulario, setFormulario] = useState({
+        name: '',
+        document: '',
+        typeDocument: '',
+        condition: ''
+    });
+
+    const handleChange = (e) => {
+        setFormulario({
+            ...formulario,
+            [e.target.name]: e.target.value
+        });
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const respuesta = await axios.post('http://localhost:5000/insertarDatosPacientes', formulario, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            console.log(respuesta);
+            alert("Datos registrados correctamente");
+        }
+        catch (error) {
+            console.log("Error al enviar datos: ",error);
+        }
+    };
+
+
     return (
         <div>
-            <form action="" >
+            <form onSubmit={handleSubmit} >
                 <label>Tipo de documento:</label>
-                <select>
+                <select name="typeDocument" value={formulario.typeDocument} onChange={handleChange}>
                     {tiposDocumento.map((tipoDocumento) => (
                             <option key={tipoDocumento.id} value={tipoDocumento.id}>{tipoDocumento.nombre}</option>
-                    ))}</select>
-                
+                    ))}
+                </select>
                 <label>No. Cédula:</label>
-                <input type="text" name="cedula" placeholder="Cédula" />
+                <input type="text" name="document" placeholder="Cédula" value={formulario.document} onChange={handleChange}/>
                 <label>Nombre:</label>
-                <input type="text" name="nombre" placeholder="Nombre" />
+                <input type="text" name="name" placeholder="Nombre" value={formulario.name} onChange={handleChange}/>
                 <label>Seleccione su condición:</label>
-                <select name="Condicion" id="condicion">
+                <select name="condition" value={formulario.condition} onChange={handleChange}>
                     {condiciones.map((condicion) => (
                             <option key={condicion.id} value={condicion.id}>{condicion.descripcion}</option>
                     ))}
                 </select>
                 
                         
-                <input type="submit" value="Ok" />
+                <button type='Submit'>Enviar</button>
             </form>
         </div>
     )
