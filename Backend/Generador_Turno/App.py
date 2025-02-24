@@ -3,33 +3,31 @@ from flask_cors import CORS
 from ConexionDB import Conexion
 
 app = Flask(__name__)
-"""app.config['CORS_HEADERS'] = 'Content-Type'
-CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)"""
+app.config['CORS_HEADERS'] = 'Content-Type'
+CORS(app)
 
-@app.after_request
-def agregar_headers_cors(response):
-    response.headers.add("Access-Control-Allow-Origin", "*")  
-    response.headers.add("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE")  
-    response.headers.add("Access-Control-Allow-Headers", "Content-Type, Authorization")  
-    return response
-
-@app.route('/insertarDatosPacientes', methods=['POST'])
+@app.route('/insertarDatosPacientes', methods=['POST', 'OPTIONS'])
 def insertar_datos():
+    if request.method == 'OPTIONS':
+        return respuestaPreflight()
     data = request.json
     nombre = data['name']
-    cedula = data['document']
-    tipoDocumento = data['typeDocument']
-    condicion = data['condition']
+    cedula = int(data['document'])
+    tipoDocumento = int(data['typeDocument'])
+    condicion = int(data['condition'])
     conexion = Conexion()
     cursor = conexion.cursor()
-    consultaSQL = "INSERT INTO pacientes (cedula, nombre, tipo_persona_FK, tipo_documento_FK) VALUES (%s, %s, %s, %s)"
-    cursor.execute(consultaSQL, (cedula, nombre, condicion, tipoDocumento))
-    conexion.commit()
-    cursor.close()
-    conexion.close()
-    return jsonify({"mensaje": "Datos insertados correctamente"})
-
-
+    consultaSQL = "INSERT INTO Pacientes (cedula, nombre, tipo_persona_FK,tipo_documento_FK)VALUES (%s, %s, %s, %s)"
+    try:
+        cursor.execute(consultaSQL, (cedula, nombre, condicion, tipoDocumento))
+        conexion.commit()
+        cursor.close()
+        conexion.close()
+        return jsonify({"mensaje": "Datos insertados"})
+    except Exception as e:
+        conexion.rollback()
+        mensaje = {"error": str(e)}
+    return jsonify(mensaje)
 
 #transforma la tabla de tipos de documentoa json
 @app.route('/tiposdocumento', methods=['GET'])
@@ -63,6 +61,13 @@ def estado_turno():
     cursor.close()
     conexion.close()
     return jsonify(datos)
+
+def respuestaPreflight():
+    response = jsonify({"mensaje": "Metodo options permitido"})
+    response.headers.add("Access-Control-Allow-Origin", "http://localhost:5173")
+    response.headers.add("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+    response.headers.add("Access-Control-Allow-Headers", "Content-Type, Authorization")
+    return response, 200
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)

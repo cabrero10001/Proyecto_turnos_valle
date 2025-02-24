@@ -43,12 +43,11 @@ export default function Form () {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log(formulario);
         try {
-            const respuesta = await axios.post('http://localhost:5000/insertarDatosPacientes', formulario, {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
+            const respuesta = await axios.post('http://localhost:5000/insertarDatosPacientes', formulario, { 
+                headers: { 'Content-Type': 'application/json' }
+            } )
             console.log(respuesta);
             alert("Datos registrados correctamente");
         }
@@ -63,6 +62,7 @@ export default function Form () {
             <form onSubmit={handleSubmit} >
                 <label>Tipo de documento:</label>
                 <select name="typeDocument" value={formulario.typeDocument} onChange={handleChange}>
+                <option value="Seleccione su tipo de documento">Seleccione su tipo de documento</option>
                     {tiposDocumento.map((tipoDocumento) => (
                             <option key={tipoDocumento.id} value={tipoDocumento.id}>{tipoDocumento.nombre}</option>
                     ))}
@@ -73,6 +73,7 @@ export default function Form () {
                 <input type="text" name="name" placeholder="Nombre" value={formulario.name} onChange={handleChange}/>
                 <label>Seleccione su condición:</label>
                 <select name="condition" value={formulario.condition} onChange={handleChange}>
+                    <option value="seleccione su tipo de condicion"> tipo de condicion</option>
                     {condiciones.map((condicion) => (
                             <option key={condicion.id} value={condicion.id}>{condicion.descripcion}</option>
                     ))}
