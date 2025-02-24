@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ipsLogo from "../../../images/ips.png";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; 
 
 /**
  * Componente funcional Form
@@ -32,12 +32,13 @@ const formop = () => {
   };
 
   // Función para manejar el envío del formulario
-  const handleSubmit = (event) => {
-    // Evita que la página se recargue al enviar el formulario
-    event.preventDefault();
-    // Muestra los valores del formulario en la consola
-    console.log(values);
-  };
+  const navigate = useNavigate(); 
+    
+    const handleSubmit = (event) => {
+        event.preventDefault(); // Evita la recarga
+        console.log(values); // Muestra los datos en consola
+        navigate("/ticketop"); // Redirige a la página del Ticket
+    };
 
   return (
     // Contenedor principal con estilos de fondo y altura mínima de pantalla
